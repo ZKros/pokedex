@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PokemonComponent } from './pokemon/pokemon.component';
 import { PokemonModule } from './pokemon/pokemon.module';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,7 +12,8 @@ import { PokemonModule } from './pokemon/pokemon.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-		PokemonModule
+		PokemonModule,
+		ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
