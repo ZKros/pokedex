@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PokemonModule } from './pokemon/pokemon.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatDialogModule} from '@angular/material/dialog'
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     BrowserAnimationsModule,
 		PokemonModule,
-		ReactiveFormsModule
+		ReactiveFormsModule,
+		MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

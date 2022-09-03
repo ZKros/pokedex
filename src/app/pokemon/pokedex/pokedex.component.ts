@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-pokedex',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokedexComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+		public dialogRef: MatDialogRef<PokedexComponent>
+	) { }
 
   ngOnInit(): void {
   }
 
+	cancel(): void {
+		this.dialogRef.close();
+	}
 }
