@@ -1,6 +1,6 @@
 # Pokedex
 
-Criando uma pokedex com pokemons do tipo água.
+Criar uma Pokedex
 
 # Intuito do Projeto
 
