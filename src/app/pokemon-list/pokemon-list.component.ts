@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 import { PokemonService } from '../services/pokemon.service';
 
 @Component({
@@ -7,7 +8,10 @@ import { PokemonService } from '../services/pokemon.service';
 	styleUrls: ['./pokemon-list.component.css']
 })
 export class PokemonListComponent implements OnInit {
-	constructor(public service: PokemonService) { }
+	constructor(
+		public service: PokemonService,
+		public dialogRef: MatDialogRef<PokemonListComponent>
+	) { }
 
 	ngOnInit(): void {
 	}
