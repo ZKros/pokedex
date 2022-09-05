@@ -1,21 +1,42 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Pokemon } from '../pokemon';
+import { map, tap } from 'rxjs/operators'
+import { Observable } from 'rxjs';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class PokemonService {
-	public pokemons: Pokemon[] = []
+	public allPokemons: any;
+	private urlPokemon: string = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151';
 
 	constructor(private httpClient: HttpClient) {
-		this.loadingPokemons();
+		this.loadingPokemons.subscribe(
+			res => {
+				this.allPokemons = res.results;
+			}
+		);
 	}
-	async loadingPokemons() {
-		const request = await this.httpClient.get<any>('https://pokeapi.co/api/v2/pokemon?limit=151').toPromise();
-		this.pokemons = request.results;
+	get loadingPokemons(): Observable<any> {
+		return this.httpClient.get<any>(this.urlPokemon).pipe(
+			tap(res => res),
+			tap(res => {
+				res.results.map((resPokemons: any) => {
+					this.statusPokemon(resPokemons.url).subscribe(
+						res => resPokemons.status = res
+					)
+				})
+			})
+		)
+		//this.pokemons = request.results;
+		//console.log(request);
+	}
 
-		console.log(this.pokemons);
-		
+	public statusPokemon(url: string): Observable<any> {
+		return this.httpClient.get<any>(url).pipe(
+			map(
+				res => res
+			)
+		)
 	}
 }
