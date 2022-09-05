@@ -1,10 +1,15 @@
-<div class="container">
-	<div class="pokemonSearch">
-		<img src="https://i0.wp.com/multarte.com.br/wp-content/uploads/2019/03/pokemon-png-logo.png?fit=2000%2C736&ssl=1"
-			width="500px" />
-		<input type="text" placeholder="Search Pokemons...">
-	</div>
-	<div class="pokemon-list">
-		<app-pokemon-card></app-pokemon-card>
-	</div>
+<app-pokemon-search (emmitSearch)="search($event)"></app-pokemon-search>
+
+<div class="pokemon-list">
+	<ng-template ngFor let-pokemon [ngForOf]="allPokemonsSearch">
+		<a class="pokemon" *ngIf="pokemon.status">
+			<div class="pokemon-card">
+				<img [src]="pokemon?.status?.sprites.other['official-artwork'].front_default"> <br>
+				<b> {{pokemon.status.id}} - {{pokemon.name}}</b> <br>
+				<b *ngFor="let pokemon of pokemon?.status?.types">
+					{{pokemon.type.name}}
+				</b>
+			</div>
+		</a>
+	</ng-template>
 </div>

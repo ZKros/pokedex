@@ -7,15 +7,10 @@ import { Observable } from 'rxjs';
 	providedIn: 'root'
 })
 export class PokemonService {
-	public allPokemons: any;
 	private urlPokemon: string = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151';
 
 	constructor(private httpClient: HttpClient) {
-		this.loadingPokemons.subscribe(
-			res => {
-				this.allPokemons = res.results;
-			}
-		);
+
 	}
 	get loadingPokemons(): Observable<any> {
 		return this.httpClient.get<any>(this.urlPokemon).pipe(

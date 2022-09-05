@@ -1,0 +1,17 @@
+.pokemonSearch {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+input {
+	width: 40%;
+	border: none;
+	background: rgba(255, 255, 255, 0.2);
+	padding: 15px;
+	font-size: 18px;
+	color: white;
+	border-radius: 10px;
+	outline: none;
+	font-weight: 100px;
+}

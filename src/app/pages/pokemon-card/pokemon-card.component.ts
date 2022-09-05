@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { PokemonService } from '../../services/pokemon.service';
 
 @Component({
@@ -7,31 +7,11 @@ import { PokemonService } from '../../services/pokemon.service';
 	styleUrls: ['./pokemon-card.component.css']
 })
 export class PokemonCardComponent implements OnInit {
-	@Input() pokemon!: string;
-	@Input() typePokemon!: string;
-	@Input() numberPokemon!: number;
 
 	constructor(
 		public service: PokemonService
 	) { }
 
-	ngOnInit(): void {
-		
-	}
+	ngOnInit(): void {}
 
-	catchImgPokemon() {
-		const numberFormat = this.leadingZero(this.numberPokemon);
-
-		return `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${numberFormat}.png`;
-	}
-
-	leadingZero(str: string | number, size = 3): string {
-		let s = String(str);
-
-		while (s.length < (size || 2)) {
-			s = '0' + s;
-		}
-
-		return s;
-	}
 }

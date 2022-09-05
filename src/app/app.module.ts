@@ -8,9 +8,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { PokemonService } from './services/pokemon.service';
 import { PokedexComponent } from './pages/pokedex/pokedex.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { RouterModule } from '@angular/router';
-import { RouterTestingModule } from "@angular/router/testing";
-import { RoutingModule } from './pages/routing.module';
+import { PokemonSearchComponent } from './pages/pokemon-search/pokemon-search.component';
 
 @NgModule({
 	declarations: [
@@ -18,15 +16,13 @@ import { RoutingModule } from './pages/routing.module';
 		PokemonListComponent,
 		PokemonCardComponent,
 		PokedexComponent,
+		PokemonSearchComponent
 	],
 	imports: [
 		BrowserModule,
 		BrowserAnimationsModule,
 		HttpClientModule,
 		MatDialogModule,
-		RouterModule,
-		RouterTestingModule,
-		RoutingModule
 	],
 	providers: [PokemonService],
 	bootstrap: [AppComponent]
