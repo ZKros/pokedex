@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class PokemonCardComponent implements OnInit {
 	@Input() pokemon?: string;
 
-	@Input() numero!: number;
+	@Input() numberPokemon!: number;
 
 	constructor() { }
 
@@ -16,7 +16,7 @@ export class PokemonCardComponent implements OnInit {
 	}
 
 	catchImgPokemon() {
-		const numberFormat = this.leadingZero(this.numero);
+		const numberFormat = this.leadingZero(this.numberPokemon);
 
 		return `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${numberFormat}.png`;
 	}

@@ -5,7 +5,7 @@
 		<input type="text" placeholder="Search Pokemons...">
 	</div>
 	<div class="pokemon-list">
-		<app-pokemon-card *ngFor="let pokemon of service.pokemons; index as i" [pokemon]="pokemon.name" [numero]="i + 1">
+		<app-pokemon-card *ngFor="let pokemon of service.pokemons; index as i" [pokemon]="pokemon.name" [numberPokemon]="i + 1">
 		</app-pokemon-card>
 	</div>
 </div>
