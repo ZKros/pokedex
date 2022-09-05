@@ -1,3 +1,11 @@
+.pokemon-list {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+
+}
+
 .pokemon-card {
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	text-align: center;
@@ -6,11 +14,16 @@
 	padding: 15px;
 	margin: 10px;
 	border-radius: 10px;
-	border-top: 6px solid #3359ec;	
+	border-top: 6px solid #3359ec;
 	border-bottom: 6px solid #3359ec;
+	width: 23.5%;
 }
 
 .pokemon-card:hover {
 	box-shadow: 0 1px 6px rgb(32, 33, 36 / 28%);
 	border-color: rgba(223, 225, 229, 0);
+}
+
+img {
+	width: 50%;
 }
