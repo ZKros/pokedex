@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 import { PokemonService } from '../../services/pokemon.service';
 
 @Component({
@@ -9,9 +10,10 @@ import { PokemonService } from '../../services/pokemon.service';
 export class PokemonCardComponent implements OnInit {
 
 	constructor(
-		public service: PokemonService
+		public service: PokemonService,
+		public dialogRef: MatDialogRef<PokemonCardComponent>,
 	) { }
 
-	ngOnInit(): void {}
+	ngOnInit(): void { }
 
 }

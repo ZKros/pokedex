@@ -1,15 +1,16 @@
 <app-pokemon-search (emmitSearch)="search($event)"></app-pokemon-search>
 
 <div class="pokemon-list">
-	<ng-template ngFor let-pokemon [ngForOf]="allPokemonsSearch">
-		<a class="pokemon" *ngIf="pokemon.status">
-			<div class="pokemon-card">
-				<img [src]="pokemon?.status?.sprites.other['official-artwork'].front_default"> <br>
-				<b> {{pokemon.status.id}} - {{pokemon.name}}</b> <br>
-				<b *ngFor="let pokemon of pokemon?.status?.types">
-					{{pokemon.type.name}}
-				</b>
-			</div>
-		</a>
+	<ng-template ngFor let-pokemon [ngForOf]="service.allPokemonsSearch">
+
+		<div class="pokemon-card" (click)="openPokemonStatus()">
+			<img [src]="pokemon?.status?.sprites.other['official-artwork'].front_default"> <br>
+			<b> {{pokemon.status?.id}} - {{pokemon.name}}</b> <br>
+			<b *ngFor="let pokemon of pokemon?.status?.types">
+				{{pokemon.type.name}}
+			</b>
+
+		</div>
+
 	</ng-template>
 </div>

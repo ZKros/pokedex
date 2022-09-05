@@ -15,7 +15,7 @@
 	border-radius: 10px;
 	border-top: 6px solid #3359ec;	
 	border-bottom: 6px solid #3359ec;
-	width: 80%;
+	width: 23.5%;
 }
 
 .pokemon-card:hover {
@@ -23,11 +23,6 @@
 	border-color: rgba(223, 225, 229, 0);
 }
 
-a{
-	text-decoration: none;
-	color: none;
-}
-
 img{
-	max-width: 40%;
+	width: 40%;
 }

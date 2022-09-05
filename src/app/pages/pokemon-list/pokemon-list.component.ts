@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { PokemonService } from 'src/app/services/pokemon.service';
+import { PokemonCardComponent } from '../pokemon-card/pokemon-card.component';
 
 
 @Component({
@@ -10,11 +11,11 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 })
 export class PokemonListComponent implements OnInit {
 	private allPokemons: any;
-	public allPokemonsSearch: any;
 
 	constructor(
 		public dialogRef: MatDialogRef<PokemonListComponent>,
 		public service: PokemonService,
+		public dialog: MatDialog,
 
 	) { }
 
@@ -22,7 +23,7 @@ export class PokemonListComponent implements OnInit {
 		this.service.loadingPokemons.subscribe(
 			res => {
 				this.allPokemons = res.results;
-				this.allPokemonsSearch = this.allPokemons
+				this.service.allPokemonsSearch = this.allPokemons
 			}
 		);
 	}
@@ -32,6 +33,14 @@ export class PokemonListComponent implements OnInit {
 			return !res.name.indexOf(value.toLowerCase());
 		})
 
-		this.allPokemonsSearch = filter;
+		this.service.allPokemonsSearch = filter;
+	}
+
+	openPokemonStatus() {
+		this.dialog.open(PokemonCardComponent, {
+			height: '600px',
+			width: '1000px',
+		},
+		)
 	}
 }
