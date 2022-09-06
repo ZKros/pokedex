@@ -37,11 +37,12 @@ export class PokemonListComponent implements OnInit {
 	}
 
 
-	openPokemonStatus() {
+	openPokemonStatus(id: number) {
 		this.dialog.open(PokemonCardComponent, {
 			height: '600px',
 			width: '1000px',
 		},
+		
 		)
 	}
 }
