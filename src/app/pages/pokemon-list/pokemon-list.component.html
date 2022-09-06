@@ -2,15 +2,21 @@
 
 <div class="pokemon-list">
 	<ng-template ngFor let-pokemon [ngForOf]="service.allPokemonsSearch">
-
 		<div class="pokemon-card" (click)="openPokemonStatus()">
-			<img [src]="pokemon?.status?.sprites.other['official-artwork'].front_default"> <br>
-			<b> {{pokemon.status?.id}} - {{pokemon.name}}</b> <br>
-			<b *ngFor="let pokemon of pokemon?.status?.types">
-				{{pokemon.type.name}}
-			</b>
 
+			<div>
+				<img [src]="pokemon?.status?.sprites.other['official-artwork'].front_default"> 
+			</div>
+				
+			<div>
+				<b>{{pokemon.name}}</b> 
+			</div>
+			<div>
+				<b *ngFor="let pokemon of pokemon?.status?.types">
+					{{pokemon.type.name}}
+				</b>
+			</div>
+			
 		</div>
-
 	</ng-template>
 </div>

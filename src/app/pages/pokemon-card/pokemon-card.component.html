@@ -3,7 +3,7 @@
 
 		<div class="pokemon-card">
 			<img [src]="pokemon?.status?.sprites.other['official-artwork'].front_default"> <br>
-			<b> {{pokemon.status.id}} - {{pokemon.name}}</b> <br>
+			<b>{{pokemon.name}}</b> <br>
 			<b *ngFor="let pokemon of pokemon?.status?.types">
 				{{pokemon.type.name}}
 			</b>
