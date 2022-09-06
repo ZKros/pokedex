@@ -36,6 +36,7 @@ export class PokemonListComponent implements OnInit {
 		this.service.allPokemonsSearch = filter;
 	}
 
+
 	openPokemonStatus() {
 		this.dialog.open(PokemonCardComponent, {
 			height: '600px',
