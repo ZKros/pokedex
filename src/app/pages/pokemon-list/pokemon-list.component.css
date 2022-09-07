@@ -6,13 +6,6 @@
 }
 
 .pokemon-card {
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	text-align: center;
-	text-transform: capitalize;
-	background: #f2f2f2;
-}
-
-.pokemon-card {
 	display: flex;
 	flex-direction: column;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -24,7 +17,6 @@
 	border-top: 6px solid #3359ec;
 	border-bottom: 6px solid #3359ec;
 	width: 18%
-
 }
 
 .pokemon-card:hover {
@@ -32,13 +24,9 @@
 	border-color: rgba(223, 225, 229, 0);
 }
 
-img{
-	width: 40%;
-}
-
 .pokemon-number{
 	padding: 0 10px;
-	margin: 0 10px;
+	margin: 0 2px;
 }
 
 .pokemon-name {
