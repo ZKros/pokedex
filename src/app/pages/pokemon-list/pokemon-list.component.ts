@@ -27,7 +27,6 @@ export class PokemonListComponent implements OnInit {
 			}
 		);
 	}
-
 	search(value: string) {
 		const filter = this.allPokemons.filter((res: any) => {
 			return !res.name.indexOf(value.toLowerCase());
@@ -35,14 +34,20 @@ export class PokemonListComponent implements OnInit {
 
 		this.service.allPokemonsSearch = filter;
 	}
-
-
 	openPokemonStatus(id: number) {
 		this.dialog.open(PokemonCardComponent, {
 			height: '600px',
 			width: '1000px',
 		},
-		
 		)
+	}
+	leadingZero(str: string | number, size = 3): string {
+		let s = String(str);
+
+		while (s.length < (size || 2)) {
+			s = '0' + s;
+		}
+
+		return s;
 	}
 }

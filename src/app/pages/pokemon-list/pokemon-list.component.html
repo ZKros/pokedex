@@ -8,14 +8,19 @@
 				<img [src]="pokemon?.status?.sprites.other['official-artwork'].front_default">
 			</div>
 
-			<div>
+			<div class="pokemon-number">
+				#{{leadingZero(pokemon.status?.id)}}
+			</div>
+
+			<div class="pokemon-name">
 				{{pokemon?.name}}
 			</div>
-			
-			<div>
-				<b *ngFor="let pokemon of pokemon?.status?.types" [class]="'background-color-' + pokemon.type?.name.toLowerCase()">
+
+			<div class="pokemon-types">
+				<div class="pokemon-type" *ngFor="let pokemon of pokemon?.status?.types"
+					[class]="'background-color-' + pokemon.type?.name.toLowerCase()">
 					{{pokemon.type?.name}}
-				</b>
+				</div>
 			</div>
 
 		</div>
