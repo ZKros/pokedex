@@ -1,4 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
+import { PokemonService } from '../../services/pokemon.service';
 
 @Component({
 	selector: 'app-pokemon-card',
@@ -6,10 +8,12 @@ import { Component, Input, OnInit } from '@angular/core';
 	styleUrls: ['./pokemon-card.component.css']
 })
 export class PokemonCardComponent implements OnInit {
-	constructor() { }
 
-	ngOnInit(): void {
-	}
+	constructor(
+		public service: PokemonService,
+		public dialogRef: MatDialogRef<PokemonCardComponent>,
+	) { }
 
+	ngOnInit(): void { }
 
 }

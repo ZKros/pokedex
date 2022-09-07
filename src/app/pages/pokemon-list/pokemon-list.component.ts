@@ -1,6 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
-import { PokemonService } from '../../services/pokemon.service';
+import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { PokemonService } from 'src/app/services/pokemon.service';
+import { PokemonCardComponent } from '../pokemon-card/pokemon-card.component';
+
 
 @Component({
 	selector: 'app-pokemon-list',
@@ -8,30 +10,37 @@ import { PokemonService } from '../../services/pokemon.service';
 	styleUrls: ['./pokemon-list.component.css']
 })
 export class PokemonListComponent implements OnInit {
-	@Input() pokemon?: string;
-	@Input() numberPokemon!: number;
 	private allPokemons: any;
-	public allPokemonsSearch: any;
 
 	constructor(
+		public dialogRef: MatDialogRef<PokemonListComponent>,
 		public service: PokemonService,
-		public dialogRef: MatDialogRef<PokemonListComponent>
+		public dialog: MatDialog,
+
 	) { }
 
 	ngOnInit(): void {
 		this.service.loadingPokemons.subscribe(
 			res => {
 				this.allPokemons = res.results;
-				this.allPokemonsSearch = this.allPokemons
+				this.service.allPokemonsSearch = this.allPokemons
 			}
 		);
 	}
-	catchImgPokemon() {
-		const numberFormat = this.leadingZero(this.numberPokemon);
+	search(value: string) {
+		const filter = this.allPokemons.filter((res: any) => {
+			return !res.name.indexOf(value.toLowerCase());
+		})
 
-		return `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${numberFormat}.png`;
+		this.service.allPokemonsSearch = filter;
 	}
-
+	openPokemonStatus(id: number) {
+		this.dialog.open(PokemonCardComponent, {
+			height: '600px',
+			width: '1000px',
+		},
+		)
+	}
 	leadingZero(str: string | number, size = 3): string {
 		let s = String(str);
 
@@ -40,12 +49,5 @@ export class PokemonListComponent implements OnInit {
 		}
 
 		return s;
-	}
-	search(value: string) {
-		const filter = this.allPokemons.filter((res: any) => {
-			return !res.name.indexOf(value.toLowerCase());
-		})
-
-		this.allPokemonsSearch = filter;
 	}
 }

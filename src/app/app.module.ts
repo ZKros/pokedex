@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PokemonListComponent } from './pages/pokemon-list/pokemon-list.component';
+import { PokemonCardComponent } from './pages/pokemon-card/pokemon-card.component';
 import { HttpClientModule } from '@angular/common/http'
 import { PokemonService } from './services/pokemon.service';
-import { MatDialogModule } from '@angular/material/dialog';
 import { PokedexComponent } from './pages/pokedex/pokedex.component';
-import { PokemonCardComponent } from './pages/pokemon-card/pokemon-card.component';
-import { PokemonListComponent } from './pages/pokemon-list/pokemon-list.component';
+import { MatDialogModule } from '@angular/material/dialog';
 import { PokemonSearchComponent } from './pages/pokemon-search/pokemon-search.component';
 
 @NgModule({
@@ -16,13 +16,13 @@ import { PokemonSearchComponent } from './pages/pokemon-search/pokemon-search.co
 		PokemonListComponent,
 		PokemonCardComponent,
 		PokedexComponent,
-  PokemonSearchComponent,
+		PokemonSearchComponent
 	],
 	imports: [
 		BrowserModule,
 		BrowserAnimationsModule,
 		HttpClientModule,
-		MatDialogModule
+		MatDialogModule,
 	],
 	providers: [PokemonService],
 	bootstrap: [AppComponent]
