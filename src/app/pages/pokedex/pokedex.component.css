@@ -1,0 +1,12 @@
+.pokedex-logo{
+	display: flex;
+	padding-top: 100px;
+}
+
+.pokedex-generation{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	padding: 50px;
+}
