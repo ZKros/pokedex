@@ -48,8 +48,7 @@
 .pokemon-title {
 	color: hsl(0, 0%, 0%);
 	font-size: 145%;
-	padding-top: 20px;
-	padding-bottom: 10px;
+	padding: inherit;
 	text-transform: capitalize;
 	text-align: center;
 }
@@ -152,15 +151,7 @@
 	flex-wrap: wrap;
 }
 
-.adjust-height {
-	margin-right: auto;
-}
-
-.adjust-weight {
-	margin-right: auto;
-}
-
-.adjust-base_experience {
+.adjust {
 	margin-right: auto;
 }
 

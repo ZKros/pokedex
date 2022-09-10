@@ -42,7 +42,7 @@
 				<div class="pokemon-stats">
 
 					<div class="pokemon-base-stats" *ngFor="let pokemon of pokemonDetails[0]?.stats">
-						{{pokemon.stat?.name}}:
+						<div>{{pokemon.stat?.name}}:</div>
 						<strong>
 							{{pokemon?.base_stat}}
 						</strong>
@@ -58,15 +58,15 @@
 				<div class="pokemon-additional-information">
 
 					<div class="pokemon-height">
-						<div class="adjust-height"> Height:</div><strong>{{pokemonDetails[0].height}}</strong>
+						<div class="adjust"> Height:</div><strong>{{pokemonDetails[0].height}}</strong>
 					</div>
 
 					<div class="pokemon-weight">
-						<div class="adjust-weight">Weight:</div><strong>{{pokemonDetails[0].weight}}</strong>
+						<div class="adjust">Weight:</div><strong>{{pokemonDetails[0].weight}}</strong>
 					</div>
 
 					<div class="pokemon-base_experience">
-						<div class="adjust-base_experience">Base Experience:</div>
+						<div class="adjust">Base Experience:</div>
 						<strong>{{pokemonDetails[0].base_experience}}</strong>
 					</div>
 
