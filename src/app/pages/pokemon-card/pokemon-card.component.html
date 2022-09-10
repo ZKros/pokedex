@@ -1,55 +1,58 @@
-<div class="pokemon-list">
+<div class="pokemon">
+	<div class="pokemon-list">
 
-	<div class="pokemon-card">
-		<div>
-			<img [src]="pokemonDetails[0]?.sprites?.other['official-artwork']?.front_default">
-		</div>
+		<div class="pokemon-card">
+			<div>
+				<img [src]="pokemonDetails[0]?.sprites?.other['official-artwork']?.front_default">
+			</div>
 
-		<div class="pokemon-number">
-			#{{leadingZero(pokemonDetails[0]?.id)}}
-		</div>
+			<div class="pokemon-number">
+				#{{leadingZero(pokemonDetails[0]?.id)}}
+			</div>
 
-		<div class="pokemon-name">
-			{{pokemonDetails[0]?.name}}
-		</div>
+			<div class="pokemon-name">
+				{{pokemonDetails[0]?.name}}
+			</div>
 
-		<div class="pokemon-title">
-			Types
-			<div class="pokemon-types">
-				<div class="pokemon-type" *ngFor="let pokemon of pokemonDetails[0]?.types"
-					[class]="'background-color-' + pokemon.type?.name.toLowerCase()">
-					{{pokemon.type?.name}}
+			<div class="pokemon-title">
+				Types
+				<div class="pokemon-types">
+					<div class="pokemon-type" *ngFor="let pokemon of pokemonDetails[0]?.types"
+						[class]="'background-color-' + pokemon.type?.name.toLowerCase()">
+						{{pokemon.type?.name}}
+					</div>
 				</div>
 			</div>
-		</div>
 
-		<div class="pokemon-title">
-			Abilities
-			<div class="pokemon-abilities">
-				<div class="pokemon-ability" *ngFor="let pokemon of pokemonDetails[0]?.abilities">
-					{{pokemon.ability?.name}}
+			<div class="pokemon-title">
+				Abilities
+				<div class="pokemon-abilities">
+					<div class="pokemon-ability" *ngFor="let pokemon of pokemonDetails[0]?.abilities">
+						{{pokemon.ability?.name}}
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="pokemon-card-stats">
-
-		<div class="adjust">
+	<div class="pokemon-list-information">
+		<div class="pokemon-card-stats">
 			<div class="pokemon-title">
 				Stats
 				<div class="pokemon-stats">
+
 					<div class="pokemon-base-stats" *ngFor="let pokemon of pokemonDetails[0]?.stats">
 						{{pokemon.stat?.name}}:
 						<strong>
 							{{pokemon?.base_stat}}
 						</strong>
 					</div>
+
 				</div>
 			</div>
 		</div>
-		
-		<div class="adjust">
+
+		<div class="pokemon-card-additional-information">
 			<div class="pokemon-title">
 				Additional Information
 				<div class="pokemon-additional-information">
@@ -70,5 +73,4 @@
 			</div>
 		</div>
 	</div>
-
 </div>
