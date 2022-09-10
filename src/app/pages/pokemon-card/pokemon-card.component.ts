@@ -23,7 +23,7 @@ export class PokemonCardComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
-		this.pokemon();
+		this.pokemon();	
 	}
 
 	public pokemon() {

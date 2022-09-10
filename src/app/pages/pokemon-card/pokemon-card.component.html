@@ -35,13 +35,34 @@
 
 	<div class="pokemon-card-stats">
 		<div class="pokemon-title">
-			Statistics
+			Stats
 			<div class="pokemon-stats">
 				<div class="pokemon-base-stats" *ngFor="let pokemon of pokemonDetails[0]?.stats">
 					{{pokemon.stat?.name}}:
 					<strong>
 						{{pokemon?.base_stat}}
 					</strong>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	
+	<div class="pokemon-card-additional-information">
+		<div class="pokemon-title">
+			Additional Information
+			<div class="pokemon-additional-information">
+
+				<div class="pokemon-base_experience">
+					Base Experience:{{pokemonDetails[0].base_experience}}
+				</div>
+
+				<div class="pokemon-height">
+					Height:{{pokemonDetails[0].height}}
+				</div>
+
+				<div class="pokemon-weight">
+					Weight:{{pokemonDetails[0].weight}}
 				</div>
 
 			</div>
