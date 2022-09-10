@@ -130,10 +130,38 @@
 }
 
 .pokemon-additional-information {
-	display: flex;
-	justify-content: space-between;
 	padding-bottom: 15px;
-	margin-top: 50px;
+	margin-top: 30px;
+}
+
+.pokemon-base_experience {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.pokemon-weight {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.pokemon-height {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.adjust-height {
+	margin-right: 80%;
+}
+
+.adjust-weight {
+	margin-right: 77%;
+}
+
+.adjust-base_experience {
+	margin-right: 56.5%;
 }
 
 img {
