@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { PokemonListComponent } from '../pokemon-list/pokemon-list.component';
+import { PokemonListGen1Component } from '../gen1/pokemon-list-gen1/pokemon-list-gen1.component';
+import { PokemonListGen2Component } from '../gen2/pokemon-list-gen2/pokemon-list-gen2.component';
+
+
 
 @Component({
 	selector: 'app-pokedex',
@@ -16,11 +19,18 @@ export class PokedexComponent implements OnInit {
 	ngOnInit(): void {
 	}
 
-	openPokedex() {
-		this.dialog.open(PokemonListComponent, {
+	openGen1() {
+		this.dialog.open(PokemonListGen1Component, {
 			height: '2000px',
 			width: '1500px',
-			panelClass:'my-class'
+			panelClass: 'my-class'
+		});
+	}
+	openGen2() {
+		this.dialog.open(PokemonListGen2Component, {
+			height: '2000px',
+			width: '1500px',
+			panelClass: 'my-class'
 		});
 	}
 }

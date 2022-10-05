@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { forkJoin } from 'rxjs';
-import { PokemonService } from '../../services/pokemon.service';
+import { PokemonService } from 'src/app/services/pokemon.service';
 
 @Component({
 	selector: 'app-pokemon-card',

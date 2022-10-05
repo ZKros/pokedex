@@ -5,15 +5,15 @@ import { PokemonCardComponent } from '../pokemon-card/pokemon-card.component';
 
 
 @Component({
-	selector: 'app-pokemon-list',
-	templateUrl: './pokemon-list.component.html',
-	styleUrls: ['./pokemon-list.component.css']
+	selector: 'app-pokemon-list-gen1',
+	templateUrl: './pokemon-list-gen1.component.html',
+	styleUrls: ['./pokemon-list-gen1.component.css']
 })
-export class PokemonListComponent implements OnInit {
+export class PokemonListGen1Component implements OnInit {
 	private allPokemons: any;
 
 	constructor(
-		public dialogRef: MatDialogRef<PokemonListComponent>,
+		public dialogRef: MatDialogRef<PokemonListGen1Component>,
 		public service: PokemonService,
 		public dialog: MatDialog,
 
